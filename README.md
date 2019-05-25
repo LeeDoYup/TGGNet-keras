@@ -1,5 +1,47 @@
 # TGNet-keras
-Author's implementation of TGNet: Demand Forecasting from Spatiotemporal Data with Graph Networks and Temporal-Guided Embedding
+Author's implementation of TGNet: Demand Forecasting from Spatiotemporal Data with Graph Networks and Temporal-Guided Embedding.  
+Our model has about **20 times smaller number of trainable parameters** than a recent state-of-the-are demand forecasting model, [STDN](https://github.com/tangxianfeng/STDN), and competitive or better performances on NYC datasets.  
+We do **not** use external data, such as meteorological data, event information, traffic flow, or news, and only focus on efficient extraction of complex spatiotemporal features in past demand patterns.  
+
+If you want to combine external data sources in our model, you can do that.  
+After a stack of layers, combine the feature maps by the same manner of drop-off volumes in this model.  
+
+From ARIMA to STDN, they learn autoregressive model of ordered sequence and do **not** consider speicfic temporal contexts of forecasting target (because of stationary assumption).
+
+Our model not only learns autoregressive model of ordered sequence,  
+but also learns temporal contexts explicitly.  
+Finally, TGNet learns **conditional autoregressive model on temporal contexts** of forecasting-targtar time.
+The detail explanation is in our paper [(arxiv)](https://github.com/LeeDoYup)
+
+## Prerequisites (my environments)
+- Python 3.5.2 .
+- Tensorflow-gpu 1.7.0 .
+- Keras 2.2.2 .
+- Pandas 0.22.0 .
+- Numpy 1.14.2 .
+
+
+## Usage
+We attach \*Sampler.ipynb files for reference to make dataset.  
+We do not open SEO-taxi dataset in original paper.  
+First, unzip the dataset.
+```
+>> unzip dataset.zip
+```
+
+## Run Saved Model and Teest
+```
+>> python main.py --model_name NYC --dataset_name NYC --test --alpha (0.01 or 0.05)
+>> python main.py --model_name NYCB --dataset_name NYC_bike --test --alpha (0.01 or 0.05)
+```
+
+## Training a Model from Scratch
+```
+>> python main.py --model_name (model_name) --num_gpu (gpu counts) --dataset_name (NYC or NYC_bike) --alpha (0.01 or 0.05)
+```
+In here, alpha means the threshold level of atypical sample selection.    
+There are many arguments to change hyper-parameters, see main.py
+
 
 ## TGNet: Model Description
 TGNet consists 3 components: (a) baseline model (GN), (b) temporal-guided embedding, and (c) late fusion with external data sources.  
@@ -56,32 +98,6 @@ In addition, working day and weekend&holiday are divided in the embedding space.
 <img src="./assets/tge_nyc_visualization.gif" width="400">
 
 <img src="./assets/nyc_segmentation.jpg" width="400">
-
-
-## Prerequisites (my environments)
-- Python 3.5.2 .
-- Tensorflow-gpu 1.7.0 .
-- Keras 2.2.2 .
-- Pandas 0.22.0 .
-- Numpy 1.14.2 .
-
-
-## Usage
-We attach \*Sampler.ipynb files for reference to make dataset.  
-We do not open SEO-taxi dataset in original paper.  
-
-## Run Saved Model and Teest
-```
-python main.py --model_name NYC --dataset_name NYC --test --alpha (0.01 or 0.05)
-python main.py --model_name NYCB --dataset_name NYC_bike --test --alpha (0.01 or 0.05)
-```
-
-## Training a Model from Scratch
-```
-python3 main.py --model_name (model_name) --num_gpu (gpu counts) --dataset_name (NYC or NYC_bike) --alpha (0.01 or 0.05)
-```
-In here, alpha means the threshold level of atypical sample selection.    
-There are many arguments to change hyper-parameters, see main.py
 
 
 ## Contact
