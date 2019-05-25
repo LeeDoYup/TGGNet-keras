@@ -1,15 +1,13 @@
 # TGNet-keras
-Author's implementation of TGNet: Demand Forecasting from Spatiotemporal Data with Graph Networks and Temporal-Guided Embedding.  
+Author's implementation of TGNet.  
 Our model has about **20 times smaller number of trainable parameters** than a recent state-of-the-are demand forecasting model, [STDN](https://github.com/tangxianfeng/STDN), and competitive or better performances on NYC datasets.  
-We do **not** use external data, such as meteorological data, event information, traffic flow, or news, and only focus on efficient extraction of complex spatiotemporal features in past demand patterns.  
+We do **not** use external data, such as meteorological data, event information, traffic flow, or news,   
+and only focus on efficient extraction of complex spatiotemporal features in past demand patterns.  
 
 If you want to combine external data sources in our model, you can do that.  
 After a stack of layers, combine the feature maps by the same manner of drop-off volumes in this model.  
 
-From ARIMA to STDN, they learn autoregressive model of ordered sequence and do **not** consider speicfic temporal contexts of forecasting target (because of stationary assumption).
-
-Our model not only learns autoregressive model of ordered sequence,  
-but also learns temporal contexts explicitly.  
+Our model not only learns autoregressive model of ordered sequence, but also **learns temporal contexts explicitly**.  
 Finally, TGNet learns **conditional autoregressive model on temporal contexts** of forecasting-targtar time.
 The detail explanation is in our paper [(arxiv)](https://github.com/LeeDoYup)
 
