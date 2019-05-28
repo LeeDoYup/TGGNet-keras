@@ -176,3 +176,4 @@ def event_metric(y_true, y_pred, index_dict):
 
 if __name__ == '__main__':
     #brief test code have to be added
+    print('[*] test')

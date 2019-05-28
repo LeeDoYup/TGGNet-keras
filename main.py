@@ -44,7 +44,7 @@ if __name__ == "__main__":
     if args.dataset_name == 'NYC':
         input_shape = [10, 20, 8]
         args.dataset = './datasets/NYC_taxi/'
-    elif args.dataset_name == 'NYC_bike':
+    elif args.dataset_name == 'NYCB':
         input_shape = [10, 20, 8]
         args.dataset = './datasets/NYC_bike/'
     else:
