@@ -97,6 +97,16 @@ In addition, working day and weekend&holiday are divided in the embedding space.
 
 <img src="./assets/nyc_segmentation.jpg" width="400">
 
+## Citation
+If you use our codes or something in paper, please cite our paper.
+```
+@article{lee2019demand,
+  title={Demand Forecasting from Spatiotemporal Data with Graph Networks ans Temporal-Guided Embedding},
+  author={Lee, Doyup and Jung, Suehun and Cheon, Yeongjae and Kim, Dongil and You, Seungil},
+  journal={arXiv preprint arXiv:1905.10709},
+  year={2019}
+}
+```
 
 ## Contact
 Doyup Lee (doyup.lee@postech.ac.kr)
