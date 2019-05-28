@@ -9,7 +9,7 @@ After a stack of layers, combine the feature maps by the same manner of drop-off
 
 Our model not only learns autoregressive model of ordered sequence, but also **learns temporal contexts explicitly**.  
 Finally, TGNet learns **conditional autoregressive model on temporal contexts** of forecasting-targtar time.
-The detail explanation is in our paper [(arxiv)](https://github.com/LeeDoYup)
+The detail explanation is in our paper [(arxiv)](https://arxiv.org/abs/1905.10709)
 
 ## Prerequisites (my environments)
 - Python 3.5.2 .
