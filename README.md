@@ -30,12 +30,18 @@ First, unzip the dataset.
 ## Run Saved Model and Teest
 ```
 >> python main.py --model_name NYC --dataset_name NYC --test --alpha (0.01 or 0.05)
->> python main.py --model_name NYCB --dataset_name NYC_bike --test --alpha (0.01 or 0.05)
+>> python main.py --model_name NYCB --dataset_name NYCB --test --alpha (0.01 or 0.05)
+```
+If you run the codes, you can check the accuracy with
+```
+(NYC) RMSE: 22.596, MAPE: 14.7 %  
+(NYCB) RMSE: 8.780, MAPE: 22.0 %
+
 ```
 
 ## Training a Model from Scratch
 ```
->> python main.py --model_name (model_name) --num_gpu (gpu counts) --dataset_name (NYC or NYC_bike) --alpha (0.01 or 0.05)
+>> python main.py --model_name (model_name) --num_gpu (gpu counts) --dataset_name (NYC or NYCB) --alpha (0.01 or 0.05)
 ```
 In here, alpha means the threshold level of atypical sample selection.    
 There are many arguments to change hyper-parameters, see main.py
