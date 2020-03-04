@@ -1,5 +1,6 @@
 # TGGNet-keras
-Author's implementation of TGNet.  
+Author's implementation of TGGNet.  
+TGGNet: An efficient baseline for demand forecasting from spatiotemporal data with graph networks and temporal-guided embedding.
 Our model has about **20 times smaller number of trainable parameters** than a recent state-of-the-are demand forecasting model, [STDN](https://github.com/tangxianfeng/STDN), and competitive or better performances on NYC datasets.  
 We do **not** use external data, such as meteorological data, event information, traffic flow, or news,   
 and only focus on efficient extraction of complex spatiotemporal features in past demand patterns.  
@@ -8,7 +9,7 @@ If you want to combine external data sources in our model, you can do that.
 After a stack of layers, combine the feature maps by the same manner of drop-off volumes in this model.  
 
 Our model not only learns autoregressive model of ordered sequence, but also **learns temporal contexts explicitly**.  
-Finally, TGNet learns **conditional autoregressive model on temporal contexts** of forecasting-targtar time.
+Finally, TGGNet learns **conditional autoregressive model on temporal contexts** of forecasting-targtar time.
 The detail explanation is in our paper [(arxiv)](https://arxiv.org/abs/1905.10709)
 
 ## Prerequisites (my environments)
@@ -47,8 +48,8 @@ In here, alpha means the threshold level of atypical sample selection.
 There are many arguments to change hyper-parameters, see main.py
 
 
-## TGNet: Model Description
-TGNet consists 3 components: (a) baseline model (GN), (b) temporal-guided embedding, and (c) late fusion with external data sources.  
+## TGGNet: Model Description
+TGGNet consists 3 components: (a) baseline model (GN), (b) temporal-guided embedding, and (c) late fusion with external data sources.  
 
 <img src="./assets/model_arch.png" width='800'>
 
@@ -56,11 +57,11 @@ Temporal guided embedding learns temporal contexts and helps FCN extract hidden 
 It is similar with the generator in coniditional GAN as we see the forecasting model as generative model.  
 
 You can use external data sources (if you want), encoding in various ways and concatenated into the baseline.  
-In TGNet, we encode taxi drop-off volumes and improve forecasting performances on atypical samples with extremely large volumes.
+In TGGNet, we encode taxi drop-off volumes and improve forecasting performances on atypical samples with extremely large volumes.
 
 # Main results
 ## Forecasting Accuracy
-TGNet shows state-of-the-art performances on real-world datsets and has **20 times smaller** number of parameters.
+TGGNet shows state-of-the-art performances on real-world datsets and has **20 times smaller** number of parameters.
 
 <img src="./assets/forecasting_table.jpeg" width='800'>
 
