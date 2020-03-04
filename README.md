@@ -1,4 +1,4 @@
-# TGNet-keras
+# TGGNet-keras
 Author's implementation of TGNet.  
 Our model has about **20 times smaller number of trainable parameters** than a recent state-of-the-are demand forecasting model, [STDN](https://github.com/tangxianfeng/STDN), and competitive or better performances on NYC datasets.  
 We do **not** use external data, such as meteorological data, event information, traffic flow, or news,   
